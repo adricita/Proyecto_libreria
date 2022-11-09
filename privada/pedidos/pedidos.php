@@ -15,7 +15,9 @@ $sql = $db->Prepare("SELECT *
 					AND pe.estado <> '0'
 					AND cl.estado <> '0'
 					ORDER BY pe.id_pedido DESC
+					GROUP BY pe.id_pedido
 					");
+
 $rs = $db->GetAll($sql);
 
 $smarty->assign("pedidos",$rs);
